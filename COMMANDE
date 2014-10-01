@@ -1,0 +1,185 @@
+cmd : su root
+
+Installation de la carte WIFI
+#############################
+
+voir sur le lien : https://wiki.debian.org/ipw2200
+
+Add a "non-free" component to /etc/apt/sources.list for your Debian version, for example: 
+# Debian 7 "Wheezy"
+deb http://http.debian.net/debian/ wheezy main contrib non-free
+
+cmd : apt-get update
+cmd : apt-get install firmware-ipw2x00 wireless-tools
+
+
+cmd : modprobe -r ipw2200 ; modprobe ipw2200
+
+Utilisation ensuite de Network-Manager pour ce connecté au réseau Wifi
+
+Installation de zsh
+###################
+apt-get install zsh
+
+voir le site http://denisrosenkranz.com/installation-et-configuration-de-zsh/
+pour le paramétrage
+
+
+Installation de Sublime Text sur Debian
+#######################################
+wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3047_i386.deb
+sudo dpkg -i sublime-text_build-3047_i386.deb
+
+ensuite rajout de la définition d'un alias dans le .zshrc
+alias subl='/opt/sublime_text/sublime_text'
+
+
+Commande utile
+##############
+Liste des packages installés
+cmd : dpkg --get-selections
+
+Indique la version de debian
+cat /etc/debian_version
+uname -a 
+
+Paramétrage du compte MAIL
+##########################
+paramétre du compte
+	entrant
+		POP3
+		port 110
+		pop.neuf.fr
+
+	sortant
+		smtp.neuf.fr
+		port 25
+
+Installation de NODE JS
+#######################
+
+apt-get update
+apt-get install build-essential
+apt-get install python
+
+récupération des sources sur le site de nodejs, décompression       
+tar xfz node-v0.10.30.tar.gz
+
+cd node-v0.10.30
+./configure
+make
+
+make install
+
+Tutorial sur NODEJS
+###################
+http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
+
+
+
+Installation d'un serveur WEB
+#############################
+http://www.woinux.fr/installation-et-configuration-dun-serveur-web-complet-sous-debian-7-425
+
+
+Installation de XAMP pour permettre l'utilisation de JOOMLA
+###########################################################
+Récuppération de xampp-linux-x64-1.8.3-4-installer.run sur le sité de XAMP
+
+
+sudo tar xvfz xampp-linux-x64-1.8.3-4-installer.run -C /opt
+
+
+Desactivation de APACHE au démarrage 
+####################################
+http://forum.ubuntu-fr.org/viewtopic.php?id=291725
+
+rc2.d:
+README             S18acpi-support       S20cups
+S01motd            S18anacron            S20gdm3
+S13rpcbind         S18atd                S20pulseaudio
+S14nfs-common      S18cron               S20saned
+S16acpi-fakekey    S18dbus               S21bootlogs
+S16binfmt-support  S18exim4              S22minissdpd
+S16rsyslog         S18speech-dispatcher  S22rc.local
+S16sudo            S19avahi-daemon       S22rmnologin
+S17apache2         S19bluetooth
+S18acpid           S19network-manager
+
+
+rc0.d:
+K01alsa-utils  K01speech-dispatcher    K06rpcbind
+K01apache2     K01unattended-upgrades  K07hwclock.sh
+K01atd         K01urandom              K07networking
+K01bluetooth   K02avahi-daemon         K08umountfs
+K01exim4       K02network-manager      K09umountroot
+K01gdm3        K03sendsigs             K10halt
+K01minissdpd   K04rsyslog              README
+K01pulseaudio  K05umountnfs.sh
+K01saned       K06nfs-common
+
+Installation de l'imprimante
+############################
+Utilisation de CUPS
+
+Console d'admnistration : http://localhost:631/
+https://www.cups.org/
+https://wiki.debian.org/fr/SystemPrinting
+http://lea-linux.org/documentations/Admin-admin_imp-cups
+
+Paramétrage de XAMPP
+####################
+
+http://www.tutofr.com/tutoriaux/linux/XAMPP
+
+Doc sympa sur l'administration de LINUX
+######################################
+
+http://debian-handbook.info/browse/fr-FR/stable/
+
+
+Mot de passe
+
+aqwxsz52	xampp pages / user lampp
+
+azqswx52	pma (MYSQL)
+
+zasqxw52	phpMyAdmin  login: pma  			>> testé OK
+			MySQL 		login : root 			>> testé OK
+
+xszaqw52	proFTPD 	login : daemon			>> testé OK
+
+
+
+
+2TgxE8g184G9c
+
+######################################
+Installation de JOOMLA
+Nom du site : SITE_TEST1
+Description du site : "description du site de test 1"
+Mail : maralai@sfr.fr
+Identifiant du super user : root
+Pass Root : aqwzsx52
+
+
+
+
+######################################
+Paramatrage du lancement de script sur debian
+update-rc.d
+
+
+######################################
+Manipulation de github
+
+Installation du GIT pour linux
+sudo apt-get install git
+
+Rajout d'une clef SSH pour sur git
+>> génération du key ssh avec ssh-keygen, puis insertion de la clef public dans github
+
+Récupération d'un repo 
+git clone "accés ssh au repo"
+
+
